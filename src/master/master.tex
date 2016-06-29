@@ -5,7 +5,6 @@ top=1cm,
 bottom=1cm,
 left=1cm,
 right=1cm,
-headsep=.2in
 ]{geometry}
 
 \usepackage{hyperref}
@@ -14,6 +13,8 @@ headsep=.2in
     urlcolor=cyan
 }
 
+\usepackage{titlesec}
+
 \pagenumbering{gobble}
 
 \begin{document}
@@ -21,6 +22,10 @@ headsep=.2in
 \input{../sections/header}
 \input{../sections/education}
 \input{../sections/skills}
+
+% Keep subsection headings more compact after here
+\titlespacing*\subsection{0cm}{0.2cm}{0cm}
+
 \input{../sections/experience}
 \input{../sections/projects}
 
@@ -28,5 +33,5 @@ headsep=.2in
 
 %%% Local Variables:
 %%% mode: latex
-%%% TeX-master: "master"
+%%% TeX-master: t
 %%% End:
