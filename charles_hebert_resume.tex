@@ -1,4 +1,5 @@
 \documentclass[12pt, a4paper]{article}
+\usepackage[T1]{fontenc}
 
 \usepackage[a4paper,
 top=2cm,
@@ -22,12 +23,26 @@ right=3cm,
 
 \begin{document}
 
-\titlespacing*\section{0cm}{0.4cm}{0cm}
-
 \input{src/sections/header}
 
+\titlespacing*\section
+  {0em} % left
+  {0em} % before
+  {0.5em} % after
 % Keep subsection headings more compact after here
 \titlespacing*\subsection{0cm}{0.2cm}{0cm}
+
+\titleformat{\section}{\normalfont\bfseries\scshape}{\thesection}{1em}{}
+\titleformat{\subsection}{\normalfont\bfseries}{\thesubsection}{1em}{}
+
+\titleformat{\subsubsection}
+{\normalfont\normalsize\bfseries}{\thesubsubsection}{1em}{}
+
+\titleformat{\paragraph}[runin]
+{\normalfont\normalsize\bfseries}{\theparagraph}{1em}{}
+
+\titleformat{\subparagraph}[runin]
+{\normalfont\normalsize\bfseries}{\thesubparagraph}{1em}{}
 
 \input{src/sections/experience}
 \input{src/sections/education}
