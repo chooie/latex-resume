@@ -1,11 +1,15 @@
 \documentclass[12pt, a4paper]{article}
+% Font
+\renewcommand{\familydefault}{\sfdefault}
+\usepackage{helvet}
+
 \usepackage[T1]{fontenc}
 
 \usepackage[a4paper,
-top=2cm,
-bottom=2cm,
-left=3cm,
-right=3cm,
+top=3.5cm,
+bottom=3.5cm,
+left=3.5cm,
+right=3.5cm,
 ]{geometry}
 
 % Single spacing for periods between sentences
@@ -14,8 +18,7 @@ right=3cm,
 \usepackage{hyperref}
 \hypersetup{
   colorlinks=true,
-  urlcolor=cyan,
-  linkcolor=black
+  urlcolor=cyan
 }
 
 \usepackage{titlesec}
@@ -26,9 +29,16 @@ right=3cm,
 \fancyhf{}
 \renewcommand{\headrulewidth}{0pt}
 \renewcommand{\footrulewidth}{0pt}
-\fancyfoot[C]{Charles Hebert R\'esum\'e - \thepage\ of \pageref{lastpage}}
+\fancyfoot[C]{\footnotesize\scshape{Charles Hebert R\'esum\'e - \thepage\ of \pageref*{lastpage}}}
+
+\usepackage[letterspace=100]{microtype}
 
 \begin{document}
+
+% Uncomment this to measure line length
+% \noindent
+% a\-b\-c\-d\-e\-f\-g\-h\-i\-j\-k\-l\-m\-n\-o\-p\-q\-r\-s\-t\-u\-v\-w\-x\-y\-z\-a\-b\-c\-d\-e\-f\-g\-h\-i\-j\-k\-l\-m\-n\-o\-p\-q\-r\-s\-t\-u\-v\-w\-x\-y\-z\-a\-b\-c\-d\-e\-f\-g\-h\-i\-j\-k\-l\-m\-n\-o\-p\-q\-r\-s\-t\-u\-v\-w\-x\-y\-z
+
 \input{src/sections/header}
 
 \titlespacing*\section
@@ -38,7 +48,7 @@ right=3cm,
 % Keep subsection headings more compact after here
 \titlespacing*\subsection{0cm}{0.2cm}{0cm}
 
-\titleformat{\section}{\normalfont\bfseries\scshape}{\thesection}{1em}{}
+\titleformat{\section}{\normalfont\bfseries\scshape\lsstyle}{\thesection}{1em}{}
 \titleformat{\subsection}{\normalfont\bfseries}{\thesubsection}{1em}{}
 
 \titleformat{\subsubsection}
@@ -51,7 +61,9 @@ right=3cm,
 {\normalfont\normalsize\bfseries}{\thesubparagraph}{1em}{}
 
 \input{src/sections/experience}
+\vspace{1em}
 \input{src/sections/education}
+\vspace{1em}
 \input{src/sections/skills}
 \input{src/sections/projects}
 \label{lastpage}
